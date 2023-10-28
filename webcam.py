@@ -45,7 +45,7 @@ def main():
     zone = sv.PolygonZone(polygon=zone_polygon, frame_resolution_wh=tuple(args.webcam_resolution))
     zone_annotator = sv.PolygonZoneAnnotator(
         zone=zone,
-        color=sv.Color.red(),
+        color=sv.Color.blue(),
         thickness=2,
         text_thickness=4,
         text_scale=2
@@ -73,8 +73,8 @@ def main():
             labels=labels
         )
 
-        zone.trigger(detections=detections)
-        frame = zone_annotator.annotate(scene=frame)
+        #zone.trigger(detections=detections)
+        #frame = zone_annotator.annotate(scene=frame)
         frame_time = (start - end)
         end = time.time()
         fps = str(int(round(1 / frame_time, 0)))
